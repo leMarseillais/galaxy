@@ -1,0 +1,38 @@
+\select@language {french}
+\contentsline {chapter}{Introduction}{1}
+\contentsline {chapter}{\numberline {1}Pr\IeC {\'e}sentation}{2}
+\contentsline {section}{\numberline {1.1}\IeC {\'E}tat de l'art}{2}
+\contentsline {subsection}{\numberline {1.1.1}CLC bio genomics workbench }{2}
+\contentsline {subsubsection}{Description}{2}
+\contentsline {subsubsection}{Syst\IeC {\`e}me d'exploitation}{2}
+\contentsline {subsection}{\numberline {1.1.2}Genomatix}{2}
+\contentsline {subsubsection}{Description}{2}
+\contentsline {subsubsection}{Genomatix Genome Analyzer (GGA)}{2}
+\contentsline {subsubsection}{Genomatix Station mining (GMS)}{3}
+\contentsline {subsubsection}{Genomatix Software Suite}{3}
+\contentsline {subsection}{\numberline {1.1.3}Ergatis}{3}
+\contentsline {subsubsection}{Description}{3}
+\contentsline {subsection}{\numberline {1.1.4}JMP Genomics}{4}
+\contentsline {subsubsection}{Description}{4}
+\contentsline {subsubsection}{Syst\IeC {\`e}me d'exploitation}{4}
+\contentsline {subsection}{\numberline {1.1.5}Lasergene 9.1}{4}
+\contentsline {subsubsection}{Description}{4}
+\contentsline {subsubsection}{Syst\IeC {\`e}me d'exploitation}{4}
+\contentsline {subsection}{\numberline {1.1.6}RTG}{4}
+\contentsline {subsubsection}{Description}{4}
+\contentsline {subsubsection}{Syst\IeC {\`e}me d'exploitation}{4}
+\contentsline {subsection}{\numberline {1.1.7}life appliedbiosystems}{4}
+\contentsline {subsubsection}{Description}{4}
+\contentsline {section}{\numberline {1.2}S\IeC {\'e}quen\IeC {\c c}age nouvelle g\IeC {\'e}n\IeC {\'e}ration}{4}
+\contentsline {chapter}{\numberline {2}Utilisation}{9}
+\contentsline {section}{\numberline {2.1}En ligne}{9}
+\contentsline {section}{\numberline {2.2}En local}{10}
+\contentsline {subsection}{\numberline {2.2.1}T\IeC {\'e}l\IeC {\'e}chargement du code source}{11}
+\contentsline {subsection}{\numberline {2.2.2}Ex\IeC {\'e}cution du serveur local}{13}
+\contentsline {chapter}{\numberline {3}Fonctionnalit\IeC {\'e}s}{15}
+\contentsline {section}{\numberline {3.1}Pr\IeC {\'e}sentation g\IeC {\'e}n\IeC {\'e}rale}{15}
+\contentsline {section}{\numberline {3.2}Ajout de plug-ins}{16}
+\contentsline {subsection}{\numberline {3.2.1}Cr\IeC {\'e}ation}{16}
+\contentsline {subsection}{\numberline {3.2.2}Int\IeC {\'e}gration}{16}
+\contentsline {section}{\numberline {3.3}Workflow}{18}
+\contentsline {chapter}{Conclusion}{20}

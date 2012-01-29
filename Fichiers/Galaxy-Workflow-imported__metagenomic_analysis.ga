@@ -1,0 +1,538 @@
+{
+    "a_galaxy_workflow": "true", 
+    "annotation": "Generic workflow for performing a metagenomic analysis on NGS data.", 
+    "format-version": "0.1", 
+    "name": "metagenomic analysis", 
+    "steps": {
+        "0": {
+            "annotation": "454 Reads", 
+            "id": 0, 
+            "input_connections": {}, 
+            "inputs": [
+                {
+                    "description": "454 Reads", 
+                    "name": "reads"
+                }
+            ], 
+            "name": "Input dataset", 
+            "outputs": [], 
+            "position": {
+                "left": 200, 
+                "top": 204
+            }, 
+            "tool_errors": null, 
+            "tool_id": null, 
+            "tool_state": "{\"name\": \"reads\"}", 
+            "tool_version": null, 
+            "type": "data_input", 
+            "user_outputs": []
+        }, 
+        "1": {
+            "annotation": "454 Quality Dataset", 
+            "id": 1, 
+            "input_connections": {}, 
+            "inputs": [
+                {
+                    "description": "454 Quality Dataset", 
+                    "name": "qualities"
+                }
+            ], 
+            "name": "Input dataset", 
+            "outputs": [], 
+            "position": {
+                "left": 196, 
+                "top": 361
+            }, 
+            "tool_errors": null, 
+            "tool_id": null, 
+            "tool_state": "{\"name\": \"qualities\"}", 
+            "tool_version": null, 
+            "type": "data_input", 
+            "user_outputs": []
+        }, 
+        "2": {
+            "annotation": "Here we select segments of reads with contiguous high quality bases above threshold phred score of 20", 
+            "id": 2, 
+            "input_connections": {
+                "input1": {
+                    "id": 0, 
+                    "output_name": "output"
+                }, 
+                "input2": {
+                    "id": 1, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [], 
+            "name": "Select high quality segments", 
+            "outputs": [
+                {
+                    "name": "output1", 
+                    "type": "fasta"
+                }
+            ], 
+            "position": {
+                "left": 524, 
+                "top": 330
+            }, 
+            "post_job_actions": {
+                "HideDatasetActionoutput1": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "output1"
+                }
+            }, 
+            "tool_errors": null, 
+            "tool_id": "trim_reads", 
+            "tool_state": "{\"input2\": \"null\", \"trim\": \"\\\"20\\\"\", \"input1\": \"null\", \"__page__\": 0, \"chromInfo\": \"\\\"/var/opt/galaxy/main/tool-data/shared/ucsc/chrom/?.len\\\"\", \"length\": \"\\\"50\\\"\", \"sequencing_method_choice\": \"{\\\"input3\\\": \\\"yes\\\", \\\"sequencer\\\": \\\"454\\\", \\\"__current_case__\\\": 0}\"}", 
+            "tool_version": "1.0.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "3": {
+            "annotation": "Convert to tabular format so that column for additional metadata can be added", 
+            "id": 3, 
+            "input_connections": {
+                "input": {
+                    "id": 2, 
+                    "output_name": "output1"
+                }
+            }, 
+            "inputs": [], 
+            "name": "FASTA-to-Tabular", 
+            "outputs": [
+                {
+                    "name": "output", 
+                    "type": "tabular"
+                }
+            ], 
+            "position": {
+                "left": 388, 
+                "top": 518
+            }, 
+            "post_job_actions": {
+                "HideDatasetActionoutput": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "output"
+                }
+            }, 
+            "tool_errors": null, 
+            "tool_id": "fasta2tab", 
+            "tool_state": "{\"input\": \"null\", \"keep_first\": \"\\\"0\\\"\", \"chromInfo\": \"\\\"/var/opt/galaxy/main/tool-data/shared/ucsc/chrom/?.len\\\"\", \"descr_columns\": \"\\\"1\\\"\", \"__page__\": 0}", 
+            "tool_version": "1.1.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "4": {
+            "annotation": "Add column for storing where the data came from (in the case of this data, this column indicates which trip it came from)", 
+            "id": 4, 
+            "input_connections": {
+                "input": {
+                    "id": 3, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [], 
+            "name": "Add column", 
+            "outputs": [
+                {
+                    "name": "out_file1", 
+                    "type": "input"
+                }
+            ], 
+            "position": {
+                "left": 420, 
+                "top": 634
+            }, 
+            "post_job_actions": {
+                "HideDatasetActionout_file1": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "out_file1"
+                }
+            }, 
+            "tool_errors": null, 
+            "tool_id": "addValue", 
+            "tool_state": "{\"__page__\": 0, \"input\": \"null\", \"chromInfo\": \"\\\"/var/opt/galaxy/main/tool-data/shared/ucsc/chrom/?.len\\\"\", \"exp\": \"\\\"read\\\"\", \"iterate\": \"\\\"yes\\\"\"}", 
+            "tool_version": "1.0.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "5": {
+            "annotation": "Convert back to FASTA format for more analysis", 
+            "id": 5, 
+            "input_connections": {
+                "input": {
+                    "id": 4, 
+                    "output_name": "out_file1"
+                }
+            }, 
+            "inputs": [], 
+            "name": "Tabular-to-FASTA", 
+            "outputs": [
+                {
+                    "name": "output", 
+                    "type": "fasta"
+                }
+            ], 
+            "position": {
+                "left": 440, 
+                "top": 734
+            }, 
+            "post_job_actions": {
+                "HideDatasetActionoutput": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "output"
+                }
+            }, 
+            "tool_errors": null, 
+            "tool_id": "tab2fasta", 
+            "tool_state": "{\"title_col\": \"{\\\"__class__\\\": \\\"UnvalidatedValue\\\", \\\"value\\\": [\\\"3\\\"]}\", \"input\": \"null\", \"__page__\": 0, \"chromInfo\": \"\\\"/var/opt/galaxy/main/tool-data/shared/ucsc/chrom/?.len\\\"\", \"seq_col\": \"{\\\"__class__\\\": \\\"UnvalidatedValue\\\", \\\"value\\\": \\\"2\\\"}\"}", 
+            "tool_version": "1.1.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "6": {
+            "annotation": "", 
+            "id": 6, 
+            "input_connections": {
+                "input_query": {
+                    "id": 5, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [], 
+            "name": "Megablast", 
+            "outputs": [
+                {
+                    "name": "output1", 
+                    "type": "tabular"
+                }
+            ], 
+            "position": {
+                "left": 766, 
+                "top": 452
+            }, 
+            "post_job_actions": {
+                "HideDatasetActionoutput1": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "output1"
+                }
+            }, 
+            "tool_errors": null, 
+            "tool_id": "megablast_wrapper", 
+            "tool_state": "{\"evalue_cutoff\": \"\\\"0.0001\\\"\", \"__page__\": 0, \"filter_query\": \"\\\"T\\\"\", \"word_size\": \"\\\"28\\\"\", \"input_query\": \"null\", \"iden_cutoff\": \"\\\"80.0\\\"\", \"source_select\": \"\\\"/galaxy/data/blastdb/nt/07aug2010/nt\\\"\"}", 
+            "tool_version": "1.1.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "7": {
+            "annotation": "", 
+            "id": 7, 
+            "input_connections": {
+                "input_query": {
+                    "id": 5, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [], 
+            "name": "Megablast", 
+            "outputs": [
+                {
+                    "name": "output1", 
+                    "type": "tabular"
+                }
+            ], 
+            "position": {
+                "left": 749, 
+                "top": 644
+            }, 
+            "post_job_actions": {
+                "HideDatasetActionoutput1": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "output1"
+                }
+            }, 
+            "tool_errors": null, 
+            "tool_id": "megablast_wrapper", 
+            "tool_state": "{\"evalue_cutoff\": \"\\\"0.0001\\\"\", \"__page__\": 0, \"filter_query\": \"\\\"T\\\"\", \"word_size\": \"\\\"28\\\"\", \"input_query\": \"null\", \"iden_cutoff\": \"\\\"80.0\\\"\", \"source_select\": \"\\\"/galaxy/data/blastdb/09may2010/wgs/wgs\\\"\"}", 
+            "tool_version": "1.1.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "8": {
+            "annotation": "Compute sequence lengths; this data is used later for filtering suboptimal sequences", 
+            "id": 8, 
+            "input_connections": {
+                "input": {
+                    "id": 5, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [], 
+            "name": "Compute sequence length", 
+            "outputs": [
+                {
+                    "name": "output", 
+                    "type": "tabular"
+                }
+            ], 
+            "position": {
+                "left": 735, 
+                "top": 919
+            }, 
+            "post_job_actions": {
+                "HideDatasetActionoutput": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "output"
+                }
+            }, 
+            "tool_errors": null, 
+            "tool_id": "fasta_compute_length", 
+            "tool_state": "{\"input\": \"null\", \"keep_first\": \"\\\"0\\\"\", \"chromInfo\": \"\\\"/var/opt/galaxy/main/tool-data/shared/ucsc/chrom/?.len\\\"\", \"__page__\": 0}", 
+            "tool_version": "1.0.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "9": {
+            "annotation": "Merge Megablast runs to produce a single dataset for reads compared to both WGS and NT", 
+            "id": 9, 
+            "input_connections": {
+                "input1": {
+                    "id": 6, 
+                    "output_name": "output1"
+                }, 
+                "queries_0|input2": {
+                    "id": 7, 
+                    "output_name": "output1"
+                }
+            }, 
+            "inputs": [], 
+            "name": "Concatenate datasets", 
+            "outputs": [
+                {
+                    "name": "out_file1", 
+                    "type": "input"
+                }
+            ], 
+            "position": {
+                "left": 998, 
+                "top": 408
+            }, 
+            "post_job_actions": {
+                "HideDatasetActionout_file1": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "out_file1"
+                }
+            }, 
+            "tool_errors": null, 
+            "tool_id": "cat1", 
+            "tool_state": "{\"__page__\": 0, \"input1\": \"null\", \"chromInfo\": \"\\\"/var/opt/galaxy/main/tool-data/shared/ucsc/chrom/?.len\\\"\", \"queries\": \"[{\\\"input2\\\": null, \\\"__index__\\\": 0}]\"}", 
+            "tool_version": "1.0.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "10": {
+            "annotation": "Combine sequence length data with results from Megablast runs", 
+            "id": 10, 
+            "input_connections": {
+                "input1": {
+                    "id": 9, 
+                    "output_name": "out_file1"
+                }, 
+                "input2": {
+                    "id": 8, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [], 
+            "name": "Join two Datasets", 
+            "outputs": [
+                {
+                    "name": "out_file1", 
+                    "type": "input"
+                }
+            ], 
+            "position": {
+                "left": 1046, 
+                "top": 576
+            }, 
+            "post_job_actions": {
+                "HideDatasetActionout_file1": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "out_file1"
+                }
+            }, 
+            "tool_errors": null, 
+            "tool_id": "join1", 
+            "tool_state": "{\"input2\": \"null\", \"__page__\": 0, \"field1\": \"{\\\"__class__\\\": \\\"UnvalidatedValue\\\", \\\"value\\\": \\\"1\\\"}\", \"partial\": \"\\\"\\\"\", \"field2\": \"{\\\"__class__\\\": \\\"UnvalidatedValue\\\", \\\"value\\\": \\\"1\\\"}\", \"fill_empty_columns\": \"{\\\"fill_empty_columns_switch\\\": \\\"no_fill\\\", \\\"__current_case__\\\": 0}\", \"unmatched\": \"\\\"\\\"\", \"input1\": \"null\", \"chromInfo\": \"\\\"/var/opt/galaxy/main/tool-data/shared/ucsc/chrom/?.len\\\"\"}", 
+            "tool_version": "2.0.2", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "11": {
+            "annotation": "Filter suboptimal sequence alignments using the expression (sequence_alignment_length/sequence_read_length > 0.5 ); sequences that do not meet this criterion are filtered out", 
+            "id": 11, 
+            "input_connections": {
+                "input": {
+                    "id": 10, 
+                    "output_name": "out_file1"
+                }
+            }, 
+            "inputs": [], 
+            "name": "Filter", 
+            "outputs": [
+                {
+                    "name": "out_file1", 
+                    "type": "input"
+                }
+            ], 
+            "position": {
+                "left": 1085, 
+                "top": 724
+            }, 
+            "post_job_actions": {
+                "HideDatasetActionout_file1": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "out_file1"
+                }
+            }, 
+            "tool_errors": null, 
+            "tool_id": "Filter1", 
+            "tool_state": "{\"__page__\": 0, \"cond\": \"\\\"c5/c15 __gt__ 0.5\\\"\", \"chromInfo\": \"\\\"/var/opt/galaxy/main/tool-data/shared/ucsc/chrom/?.len\\\"\", \"input\": \"null\"}", 
+            "tool_version": "1.1.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "12": {
+            "annotation": "Get taxonomic representation for filtered, aligned sequences", 
+            "id": 12, 
+            "input_connections": {
+                "input": {
+                    "id": 11, 
+                    "output_name": "out_file1"
+                }
+            }, 
+            "inputs": [], 
+            "name": "Fetch taxonomic representation", 
+            "outputs": [
+                {
+                    "name": "out_file1", 
+                    "type": "taxonomy"
+                }
+            ], 
+            "position": {
+                "left": 1120, 
+                "top": 842
+            }, 
+            "post_job_actions": {
+                "HideDatasetActionout_file1": {
+                    "action_arguments": {}, 
+                    "action_type": "HideDatasetAction", 
+                    "output_name": "out_file1"
+                }
+            }, 
+            "tool_errors": null, 
+            "tool_id": "Fetch Taxonomic Ranks", 
+            "tool_state": "{\"__page__\": 0, \"input\": \"null\", \"idField\": \"{\\\"__class__\\\": \\\"UnvalidatedValue\\\", \\\"value\\\": \\\"1\\\"}\", \"chromInfo\": \"\\\"/var/opt/galaxy/main/tool-data/shared/ucsc/chrom/?.len\\\"\", \"giField\": \"{\\\"__class__\\\": \\\"UnvalidatedValue\\\", \\\"value\\\": \\\"2\\\"}\"}", 
+            "tool_version": "1.1.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "13": {
+            "annotation": "Get reads specific to ranks below Kingdom level", 
+            "id": 13, 
+            "input_connections": {
+                "input1": {
+                    "id": 12, 
+                    "output_name": "out_file1"
+                }
+            }, 
+            "inputs": [], 
+            "name": "Find lowest diagnostic rank", 
+            "outputs": [
+                {
+                    "name": "out_file1", 
+                    "type": "taxonomy"
+                }
+            ], 
+            "position": {
+                "left": 1359, 
+                "top": 487
+            }, 
+            "post_job_actions": {}, 
+            "tool_errors": null, 
+            "tool_id": "lca1", 
+            "tool_state": "{\"rank_bound\": \"\\\"5\\\"\", \"input1\": \"null\", \"chromInfo\": \"\\\"/var/opt/galaxy/main/tool-data/shared/ucsc/chrom/?.len\\\"\", \"__page__\": 0}", 
+            "tool_version": "1.0.1", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "14": {
+            "annotation": "Tabulate list of taxonomic groups contained in reads from dataset 14", 
+            "id": 14, 
+            "input_connections": {
+                "input": {
+                    "id": 12, 
+                    "output_name": "out_file1"
+                }
+            }, 
+            "inputs": [], 
+            "name": "Summarize taxonomy", 
+            "outputs": [
+                {
+                    "name": "out_file1", 
+                    "type": "tabular"
+                }
+            ], 
+            "position": {
+                "left": 1697, 
+                "top": 546
+            }, 
+            "post_job_actions": {}, 
+            "tool_errors": null, 
+            "tool_id": "t2t_report", 
+            "tool_state": "{\"input\": \"null\", \"chromInfo\": \"\\\"/var/opt/galaxy/main/tool-data/shared/ucsc/chrom/?.len\\\"\", \"__page__\": 0}", 
+            "tool_version": "1.0.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }, 
+        "15": {
+            "annotation": "Build and draw phylogenetic tree from ranks in dataset 14", 
+            "id": 15, 
+            "input_connections": {
+                "input": {
+                    "id": 13, 
+                    "output_name": "out_file1"
+                }
+            }, 
+            "inputs": [], 
+            "name": "Draw phylogeny", 
+            "outputs": [
+                {
+                    "name": "out_file1", 
+                    "type": "pdf"
+                }
+            ], 
+            "position": {
+                "left": 1695, 
+                "top": 425
+            }, 
+            "post_job_actions": {}, 
+            "tool_errors": null, 
+            "tool_id": "Draw_phylogram", 
+            "tool_state": "{\"__page__\": 0, \"font_size\": \"\\\"8\\\"\", \"chromInfo\": \"\\\"/var/opt/galaxy/main/tool-data/shared/ucsc/chrom/?.len\\\"\", \"max_leaves\": \"\\\"0\\\"\", \"input\": \"null\", \"max_tree_level\": \"\\\"8\\\"\"}", 
+            "tool_version": "1.0.0", 
+            "type": "tool", 
+            "user_outputs": []
+        }
+    }
+}

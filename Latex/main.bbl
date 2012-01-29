@@ -1,0 +1,126 @@
+\begin{thebibliography}{10}
+
+\bibitem{afgan2010galaxy}
+E.~Afgan, D.~Baker, N.~Coraor, B.~Chapman, A.~Nekrutenko, and J.~Taylor.
+\newblock Galaxy cloudman: delivering cloud compute clusters.
+\newblock {\em BMC bioinformatics}, 11(Suppl 12):S4, 2010.
+
+\bibitem{afgan2011harnessing}
+E.~Afgan, D.~Baker, N.~Coraor, H.~Goto, I.M. Paul, K.D. Makova, A.~Nekrutenko,
+  and J.~Taylor.
+\newblock Harnessing cloud computing with galaxy cloud.
+\newblock {\em Nature biotechnology}, 29(11):972--974, 2011.
+
+\bibitem{afganreference}
+E.~Afgan, D.~Baker, A.~Nekrutenko, J.~Taylor, et~al.
+\newblock A reference model for deploying applications in virtualized
+  environments.
+\newblock {\em Concurrency and Computation: Practice and Experience}.
+
+\bibitem{afgan2011galaxy}
+E.~Afgan, J.~Goecks, D.~Baker, N.~Coraor, A.~Nekrutenko, and J.~Taylor.
+\newblock Galaxy: A gateway to tools in e-science.
+\newblock {\em Guide to e-Science}, pages 145--177, 2011.
+
+\bibitem{NGS4}
+Arveiler.
+\newblock {\em Génetique humaine}.
+\newblock PhD thesis, Université Bordeaux2, 2011.
+
+\bibitem{blankenberg2011integrating}
+D.~Blankenberg, N.~Coraor, G.~Von~Kuster, J.~Taylor, and A.~Nekrutenko.
+\newblock Integrating diverse databases into an unified analysis framework: a
+  galaxy approach.
+\newblock {\em Database: the journal of biological databases and curation},
+  2011, 2011.
+
+\bibitem{blankenberg2010manipulation}
+D.~Blankenberg, A.~Gordon, G.~Von~Kuster, N.~Coraor, J.~Taylor, A.~Nekrutenko,
+  et~al.
+\newblock Manipulation of fastq data with galaxy.
+\newblock {\em Bioinformatics}, 26(14):1783--1785, 2010.
+
+\bibitem{blankenberg2011making}
+D.~Blankenberg, J.~Taylor, A.~Nekrutenko, et~al.
+\newblock Making whole genome multiple alignments usable for biologists.
+\newblock {\em Bioinformatics}, 27(17):2426--2428, 2011.
+
+\bibitem{blankenberg2007framework}
+D.~Blankenberg, J.~Taylor, I.~Schenck, J.~He, Y.~Zhang, M.~Ghent,
+  N.~Veeraraghavan, I.~Albert, W.~Miller, K.D. Makova, et~al.
+\newblock A framework for collaborative analysis of encode data: making
+  large-scale analyses biologist-friendly.
+\newblock {\em Genome research}, 17(6):960--964, 2007.
+
+\bibitem{bock2010web}
+C.~Bock, G.~Von~Kuster, K.~Halachev, J.~Taylor, A.~Nekrutenko, and T.~Lengauer.
+\newblock Web-based analysis of (epi-) genome data using epigraph and galaxy.
+\newblock {\em Methods Mol. Biol}, 628:275--296, 2010.
+
+\bibitem{NGS2}
+Laure Buhry.
+\newblock Estimation de param{\`e}tres de mod{\`e}les de neurones biologiques
+  sur une plate-forme de snn (spiking neural network) implant{\'e}s "in
+  silico".
+\newblock 2010.
+
+\bibitem{NGS5}
+EL~FAHIME Elmostafa and Ennaji~Mly Mustapha.
+\newblock Évolution des techniques de séquençage.
+\newblock {\em LES TECHNIQUES DE LABORATOIRE N5}, 2007.
+
+\bibitem{giardine2005galaxy}
+B.~Giardine, C.~Riemer, R.C. Hardison, R.~Burhans, L.~Elnitski, P.~Shah,
+  Y.~Zhang, D.~Blankenberg, I.~Albert, J.~Taylor, et~al.
+\newblock Galaxy: a platform for interactive large-scale genome analysis.
+\newblock {\em Genome research}, 15(10):1451--1455, 2005.
+
+\bibitem{NGS}
+Anat Gluzman and Eran Mick.
+\newblock Algorithms for next generation sequencing.
+\newblock 2011.
+
+\bibitem{goecks2011galaxy}
+J.~Goecks, K.~Li, D.~Clements, J.~Taylor, et~al.
+\newblock The galaxy track browser: Transforming the genome browser from
+  visualization tool to analysis tool.
+\newblock In {\em Biological Data Visualization (BioVis), 2011 IEEE Symposium
+  on}, pages 39--46. IEEE, 2011.
+
+\bibitem{lazarus2008toward}
+R.~Lazarus, J.~Taylor, W.~Qiu, and A.~Nekrutenko.
+\newblock Toward the commoditization of translational genomic research: Design
+  and implementation features of the galaxy genomic workbench.
+\newblock {\em Summit on translational bioinformatics}, 2008:56, 2008.
+
+\bibitem{miller200728}
+W.~Miller, K.~Rosenbloom, R.C. Hardison, M.~Hou, J.~Taylor, B.~Raney,
+  R.~Burhans, D.C. King, R.~Baertsch, D.~Blankenberg, et~al.
+\newblock 28-way vertebrate alignment and conservation track in the ucsc genome
+  browser.
+\newblock {\em Genome research}, 17(12):1797--1808, 2007.
+
+\bibitem{pond2009windshield}
+S.K. Pond, S.~Wadhawan, F.~Chiaromonte, G.~Ananda, W.Y. Chung, J.~Taylor,
+  A.~Nekrutenko, et~al.
+\newblock Windshield splatter analysis with the galaxy metagenomic pipeline.
+\newblock {\em Genome research}, 19(11):2144--2153, 2009.
+
+\bibitem{schatz2010missing}
+M.C. Schatz.
+\newblock The missing graphical user interface for genomics.
+\newblock {\em Genome biology}, 11(8):128, 2010.
+
+\bibitem{taylor2007using}
+J.~Taylor, I.~Schenck, D.~Blankenberg, and A.~Nekrutenko.
+\newblock Using galaxy to perform large-scale interactive data analyses.
+\newblock {\em Curr Protoc Bioinformatics}, 10(10.5), 2007.
+
+\bibitem{NGS3}
+Tom Walsh and Hashem Shahin.
+\newblock Whole exome sequencing and homozygosity mapping identify mutation in
+  the cell polarity protein gpsm2 as the cause of nonsyndromic hearing loss
+  dfnb82.
+\newblock {\em The American Journal of Human Genetics}, 2010.
+
+\end{thebibliography}

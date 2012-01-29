@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99d (TeX Live 2011)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: main.aux
+The style file: plain.bst
+Database file #1: Reference.bib
+Warning--empty year in afganreference
+Warning--empty journal in NGS2
+Warning--empty journal in NGS
+You've used 21 entries,
+            2118 wiz_defined-function locations,
+            626 strings with 8280 characters,
+and the built_in function-call counts, 8453 in all, are:
+= -- 780
+> -- 610
+< -- 2
++ -- 245
+- -- 220
+* -- 704
+:= -- 1499
+add.period$ -- 64
+call.type$ -- 21
+change.case$ -- 164
+chr.to.int$ -- 0
+cite$ -- 24
+duplicate$ -- 241
+empty$ -- 496
+format.name$ -- 220
+if$ -- 1646
+int.to.chr$ -- 0
+int.to.str$ -- 21
+missing$ -- 20
+newline$ -- 108
+num.names$ -- 42
+pop$ -- 147
+preamble$ -- 1
+purify$ -- 144
+quote$ -- 0
+skip$ -- 177
+stack$ -- 0
+substring$ -- 416
+swap$ -- 36
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 84
+warning$ -- 3
+while$ -- 67
+width$ -- 23
+write$ -- 226
+(There were 3 warnings)

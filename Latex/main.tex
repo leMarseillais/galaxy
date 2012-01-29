@@ -1,0 +1,165 @@
+\documentclass[12pt,a4paper]{report}
+
+\usepackage[utf8]{inputenc} % un package
+\usepackage[T1]{fontenc}      % un second package
+\usepackage[francais]{babel}  % un troisième package
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\usepackage{titlesec} 
+\usepackage{graphicx}
+\usepackage{caption}
+\captionsetup{figurewithin=none}  
+\captionsetup{tablewithin=none}
+\makeatletter
+\usepackage{listings}
+\usepackage{color}
+ 
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+ 
+\lstset{ %
+	language=sh,                % the language of the code
+  basicstyle=\footnotesize,           % the size of the fonts that are used for the code
+  numbers=left,                   % where to put the line-numbers
+  numberstyle=\footnotesize,          % the size of the fonts that are used for the line-numbers
+  stepnumber=1,                   % the step between two line-numbers. If it's 1, each line 
+                                  % will be numbered
+  numbersep=5pt,                  % how far the line-numbers are from the code
+  backgroundcolor=\color{white},      % choose the background color. You must add \usepackage{color}
+  showspaces=false,               % show spaces adding particular underscores
+  showstringspaces=false,         % underline spaces within strings
+  showtabs=false,                 % show tabs within strings adding particular underscores
+  frame=single,                   % adds a frame around the code
+  tabsize=2,                      % sets default tabsize to 2 spaces
+  captionpos=b,                   % sets the caption-position to bottom
+  breaklines=true,                % sets automatic line breaking
+  breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+  title=\lstname,                   % show the filename of files included with \lstinputlisting;
+                                  % also try caption instead of title
+  numberstyle=\tiny\color{red},        % line number style
+  keywordstyle=\color{blue},          % keyword style
+  commentstyle=\color{dkgreen},       % comment style
+  stringstyle=\color{mauve},         % string literal style
+  escapeinside={\%*}{*)},            % if you want to add a comment within your code
+  morekeywords={mkdir,hg}               % if you want to add more keywords to the set
+}
+\def\clap#1{\hbox to 0pt{\hss #1\hss}}%
+\def\ligne#1{%
+\hbox to \hsize{%
+\vbox{\centering #1}}}%
+\def\haut#1#2#3{%
+\hbox to \hsize{%
+\rlap{\vtop{\raggedright #1}}%
+\hss
+\clap{\vtop{\centering #2}}%
+\hss
+\llap{\vtop{\raggedleft #3}}}}%
+\def\bas#1#2#3{%
+\hbox to \hsize{%
+\rlap{\vbox{\raggedright #1}}%
+\hss
+\clap{\vbox{\centering #2}}%
+\hss
+\llap{\vbox{\raggedleft #3}}}}%
+\def\maketitle{%
+\thispagestyle{empty}\vbox to \vsize{%
+\haut{}{\@blurb}{}
+\vfill
+\vspace{1cm}
+\begin{flushleft}
+\usefont{OT1}{ptm}{m}{n}
+\huge \@title
+\end{flushleft}
+\par
+\hrule height 4pt
+\par
+\begin{flushright}
+\usefont{OT1}{phv}{m}{n}
+\Large \@author
+\par
+\end{flushright}
+\vspace{1cm}
+\vfill
+\vfill
+\bas{}{{\textbf{\Large Responsable : Mme. THEBAULT\\ \textbf{} \\ \@location, le \@date}}}{}
+}%
+\cleardoublepage
+}
+\def\date#1{\def\@date{#1}}
+\def\author#1{\def\@author{#1}}
+\def\title#1{\def\@title{#1}}
+\def\location#1{\def\@location{#1}}
+\def\blurb#1{\def\@blurb{#1}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Informations relatives au projet en cours %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\date{30 Janvier 2012}
+\author{}
+\title{}
+\location{Bordeaux}\blurb{}
+\makeatother
+\title{Analyse technique de logiciel\\Galaxy}
+\author{Florian CARRE\\Benjamin DARTIGUES\\Sebastien BEAUQUIS\\Guillaume BERNARD\\Tom LESLUYES}
+\location{Bordeaux}
+\blurb{%
+\begin{Large}
+\textbf{Université Bordeaux 1\\Master 2 Bioinformatique}
+\end{Large} \\
+\includegraphics[scale=0.7]{bdx1.png}
+\graphicspath{img/} %% Chemin vers les images du projets
+}
+\titleformat{\chapter}[hang]{\bf\huge}{\thechapter}{2pc}{} 
+\titleformat{\part}[hang]{\bf\huge}{\thepart}{2pc}{} 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Contenu du document %%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\maketitle  %% Création de la page de guarde
+\tableofcontents  %% Création d'une table des matière
+\thispagestyle{empty}
+\newpage\pagenumbering{arabic}
+%\thispagestyle{fancy}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Insertion du corps du texte %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{chap/Introduction}
+\input{chap/Presentation}
+\input{chap/Sequencage}
+\input{chap/Utilisation}
+\input{chap/Fonctionnalites}
+\input{chap/Workflow}
+\input{chap/Conclusion}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Gestion et insertion de la bibliographie %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% le fichier a modifier est bibl/biblio.bib.
+% On peut le remplir a la mano ou
+% sinon il existe des prog plus conviviale.
+% Google is your friends ^^
+
+\bibliographystyle{plain}	% (uses file "plain.bst")
+\bibliography{Reference}		% expects file "myrefs.bib"
+\nocite{*}
+\label{sec:bibli}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Gestion et insertion des annexes %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\appendix
+%\appendixpage
+%\addappheadtotoc
+%\renewcommand{\thesection}{\Alph{section}.}
+
+\end{document}
+
+
