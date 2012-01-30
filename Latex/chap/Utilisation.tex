@@ -10,21 +10,22 @@ Galaxy est un logiciel qui peut être utilisé de trois façon différentes :
 
 La création de sa propre instance de Galaxy sur le "cloud" permet une utilisation de celui-ci similaire à celle en local sans l'inconvénient de la place prise en mémoire sur son ordinateur, toutefois un compte Amazon Web Services est requis.\\
 
-La création du compte est gratuite, cependant un numéro de carte bleue doit être renseigné, en effet il semble que l'utilisation de l'ensemble des fonctionnalitées du "cloud" ai un coût. Nous n'avons donc pas pût tester Galaxy sur le "cloud".\\
+La création du compte est gratuite, cependant un numéro de carte bleue doit être renseigné, en effet il semble que l'utilisation de l'ensemble des fonctionnalitées du "cloud" ai un coût. Nous n'avons donc pas pu tester Galaxy sur le "cloud".\\
 
 \section{En ligne}
 
-L'utilisation en ligne de Galaxy est la rapide et la plus accessible en effet il suffit de rendre sur le site de ce dernier pour pouvoir y avoir directement accès. Si une utilisation sommaire ne nécessite pas la création d'un compte, il est fortement recommandé d'en créer un (gratuitement) pour avoir accès à plus de fonctionnalité, en effet posseder un compte sur Galaxy permet :\\
+L'utilisation en ligne de Galaxy est le moyen le plus rapide et le plus accessible : en effet il suffit de se rendre sur le site de ce dernier pour pouvoir y avoir directement accès. Si une utilisation sommaire ne nécessite pas la création d'un compte, il est fortement recommandé d'en créer un (gratuitement) pour avoir accès à plus de fonctionnalité. Posséder un compte sur Galaxy permet :\\
 
 \begin{itemize}
 \item d'avoir accès aux données et aux outils d'analyse depuis n'importe quel ordinateur connecté à Internet,
 \item augmenter les données et les travaux simultanés,
 \item sauvegarder un historique de compte sur une base systémique,
-\item d'avoir la capacité de nommer, sauvegarder, partager et publier des objets de Galaxie : des historiques, des workflows, des ensembles de données, des pages.
+\item d'avoir la capacité de nommer, sauvegarder, partager et publier des objets de Galaxy : des historiques, des workflows, des ensembles de données, des pages.
 \item de télécharger via le FTP de plus grands ensembles de données.\\
 \end{itemize}
 
-Galaxy dispose de nombreux outils (plus de 35 différents), heureusement lorsque l'on sélectionne l'un d'entre eux une petite fenêtre explicative nous renseigne directement sur ce qu'il fait, le format de données qu'il accepte et un exemple est également proposé (Fig XX).
+Galaxy dispose de nombreux outils (plus de 35 différents), heureusement lorsque l'on sélectionne l'un d'entre eux une petite fenêtre explicative nous renseigne directement sur ce qu'il fait, le format de données qu'il accepte et un exemple est également proposé (Fig. 6).\\
+
 
 \begin{figure}[!h]
  \centering
@@ -32,7 +33,7 @@ Galaxy dispose de nombreux outils (plus de 35 différents), heureusement lorsque
 \caption{Page d'aide d'un des outils de Galaxy.}
 \end{figure}
 
-Un wiki dédié à Galaxy est disponible sur son site, plusieurs sections différentes permettent d'en apprendre plus sur les données que peut utiliser Galaxy et les outils qu'il propose. De plus de nombreuse vidéos "tutoriel" sont disponibles, ainsi un exercice nommé Galaxy 101 fait office de "tutoriel" de départ et permet de se familiarisé avec le logiciel et quelques unes de ces fonctionnalitées. Une vidéo "tutoriel" est disponible pour chaque outil intégré à Galaxy (Fig XX).
+Un wiki dédié à Galaxy est disponible sur son site, plusieurs sections différentes permettent d'en apprendre plus sur les données que peut utiliser Galaxy et les outils qu'il propose. De plus de nombreuse vidéos "tutoriel" sont disponibles, ainsi un exercice nommé Galaxy 101 fait office de "tutoriel" de départ et permet de se familiarisé avec le logiciel et quelques unes de ces fonctionnalitées. Une vidéo "tutoriel" est disponible pour chaque outil intégré à Galaxy (Fig. 7).
 
 \begin{figure}[!h]
  \centering
@@ -68,7 +69,7 @@ Bitbucket est un site d'hébergement pour les systèmes de contrôles de version
 
 Ses principaux avantages sont la facilité d'utilisation, sa gratuité (sous réserve d'avoir moins de cinq collaborateurs sur tous les répertoires privés) ainsi que les aides proposées (nombreux tutoriaux, large communauté, Google group, I.R.C, etc ...).\\
 
-Le téléchargement de Galaxy est simple : il suffit, dans l'onglet \textit{Source} (Fig XX), de cliquer sur \textit{get source} et de sélectionner le mode de compression désiré (Fig XX).
+Le téléchargement de Galaxy est simple : il suffit, dans l'onglet \textit{Source} (Fig. 8), de cliquer sur \textit{get source} et de sélectionner le mode de compression désiré (Fig. 9).
 
 \begin{figure}[!h]
  \centering
@@ -106,8 +107,7 @@ La mise à jour utilise le système de modification distance de Mercurial. Elle 
 hg incoming
 hg pull -u
  \end{lstlisting} 
- \newpage
- La première commande indique si des modifications ont été apportées. Si elle renvoie \textit{no changes found}, la version locale est à jour. Dans le cas contraire, elle renvoie une liste de \textit{changeset} (Fig XX). La seconde commande peut être exécutée si au moins \textit{changset} est indiqué.
+ La première commande indique si des modifications ont été apportées. Si elle renvoie \textit{no changes found}, la version locale est à jour. Dans le cas contraire, elle renvoie une liste de \textit{changeset} (Fig. 10). La seconde commande peut être exécutée si au moins \textit{changset} est indiqué.
 
 \begin{figure}[!h]
  \centering
@@ -121,7 +121,7 @@ hg pull -u
 Galaxy fonctionne sur la base d'un serveur local. Cela consiste à ouvrir un serveur fictif sur l'ordinateur de l'utilisateur et à se servir de l'interface proposée par un navigateur web pour accéder aux services proposés par le serveur.\\
 
 Ce logiciel étant principalement écrit en Python, il est officiellement compatible avec les versions 2.5, 2.6 et 2.7 de l'interpréteur Python par défaut. La version par défaut est donnée en en-tête de l'interpréteur  
-(Fig XX).
+(Fig. 11).
 
  \begin{figure}[!h]
  \centering
@@ -138,7 +138,7 @@ sudo run.sh # commande administrateur
  
  La commande "de base" suffit à démarrer le serveur. Il est toutefois conseillé d'utiliser la commande administrateur car certaines opérations \footnote{Notamment l'écriture sur disque dur.} nécessitent des droits d'administrateur.\\
  
- Le serveur charge tous les fichiers requis, configure ses variables et démarre sur une adresse indiquée sur la dernière ligne du terminal (Fig XX).
+ Le serveur charge tous les fichiers requis, configure ses variables et démarre sur une adresse indiquée sur la dernière ligne du terminal (Fig. 12).
  
  \begin{figure}[!h]
  \centering
@@ -148,15 +148,14 @@ sudo run.sh # commande administrateur
 
 Pour stopper le serveur, il suffit d'utiliser \textit{ctrl+z} dans le terminal qui le gère.\\
 
-Il est possible que le port utilisé par Galaxy soit déjà en utilisation. Dans ce cas, le démarrage du serveur échoue et renvoie une erreur \textit{adress already in use} (Fig XX). Seul un redémarrage de l'ordinateur peut réinitialiser le port.
+Il est possible que le port utilisé par Galaxy soit déjà en utilisation. Dans ce cas, le démarrage du serveur échoue et renvoie une erreur \textit{adress already in use} (Fig. 13). Seul un redémarrage de l'ordinateur peut réinitialiser le port.
 
  \begin{figure}[!h]
  \centering
 \fbox{\includegraphics[scale=0.7]{Images/Socketerror.png}}
 \caption{Erreur d'adressage de port.}
 \end{figure}
-\newpage
-Une fois le serveur démarré, son accès est possible depuis un navigateur web quelconque (Fig XX). L'adresse URL à indiquer est l'adresse donnée sur la dernière ligne du terminal.
+Une fois le serveur démarré, son accès est possible depuis un navigateur web quelconque (Fig. 14). L'adresse URL à indiquer est l'adresse donnée sur la dernière ligne du terminal.
 
  \begin{figure}[!h]
  \centering

@@ -1,12 +1,14 @@
 \beamer@endinputifotherversion {3.10pt}
 \select@language {french}
-\beamer@sectionintoc {2}{NGS : Next Generation Sequencing}{5}{0}{1}
-\beamer@subsectionintoc {2}{1}{Pyros\IeC {\'e}quen\IeC {\c c}age}{6}{0}{1}
-\beamer@subsectionintoc {2}{2}{Illumina}{11}{0}{1}
-\beamer@sectionintoc {3}{Utilisation}{13}{0}{2}
-\beamer@subsectionintoc {3}{1}{Utilisation en ligne}{14}{0}{2}
-\beamer@subsectionintoc {3}{2}{Utilisation en local}{17}{0}{2}
-\beamer@sectionintoc {4}{Fonctionnalit\IeC {\'e}s}{22}{0}{3}
-\beamer@subsectionintoc {4}{1}{Pr\IeC {\'e}sentation g\IeC {\'e}n\IeC {\'e}rale}{24}{0}{3}
-\beamer@subsectionintoc {4}{2}{Ajout de plug-ins}{28}{0}{3}
-\beamer@subsectionintoc {4}{3}{Workflow}{34}{0}{3}
+\beamer@sectionintoc {2}{Etat de l'art}{6}{0}{1}
+\beamer@subsectionintoc {2}{1}{Les logiciels de workflow }{7}{0}{1}
+\beamer@sectionintoc {3}{NGS : Next Generation Sequencing}{8}{0}{2}
+\beamer@subsectionintoc {3}{1}{Pyros\IeC {\'e}quen\IeC {\c c}age}{9}{0}{2}
+\beamer@subsectionintoc {3}{2}{Illumina}{14}{0}{2}
+\beamer@sectionintoc {4}{Utilisation}{16}{0}{3}
+\beamer@subsectionintoc {4}{1}{Utilisation en ligne}{17}{0}{3}
+\beamer@subsectionintoc {4}{2}{Utilisation en local}{20}{0}{3}
+\beamer@sectionintoc {5}{Fonctionnalit\IeC {\'e}s}{25}{0}{4}
+\beamer@subsectionintoc {5}{1}{Pr\IeC {\'e}sentation g\IeC {\'e}n\IeC {\'e}rale}{27}{0}{4}
+\beamer@subsectionintoc {5}{2}{Ajout de plug-ins}{31}{0}{4}
+\beamer@subsectionintoc {5}{3}{Workflow}{37}{0}{4}
